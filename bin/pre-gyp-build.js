@@ -125,7 +125,7 @@ function install(){
 
 // Build it
 function build(done) {
-	var gyp = path.resolve(__dirname, '..', 'pre-gyp-build/node_modules/.bin', process.platform === 'win32' ? 'node-gyp.cmd' : 'node-gyp');
+	var gyp = path.resolve(__dirname, '../node_modules/.bin', process.platform === 'win32' ? 'node-gyp.cmd' : 'node-gyp');
 
 	console.log("Building '%s' version...", modPath);
 	cp.spawn(
