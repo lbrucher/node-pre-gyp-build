@@ -118,7 +118,10 @@ function install(){
 		});
 	} catch (ex) {
 		// Stat failed
-		build();
+		build(function(err){
+			if (err)
+				process.exit(err);
+		});
 	}
 }
 
@@ -143,6 +146,7 @@ function build(done) {
 				console.error('Build failed: ', err);
 			}
 		}
+
 		done(err);
 	});
 }
